@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehmat's &nbsp;Resturant</title>
+    <style>
+        #navbar {
+            display: flex;
+            background-color: black;
+            /* position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            border-radius: 0px;  */
+        }
+
+        #navbar::before {
+            background-color: black;
+            height: 10vh;
+            width: 100vw;
+            content: " ";
+            z-index: -1;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            height: 100px;
+            opacity: 0.5;
+        }
+
+        li {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            /* border: 3px solid red; */
+            border-radius: 50px;
+            /* background-color: black; */
+            height: 70px;
+            width: 1200px;
+            position: absolute;
+            left: 100px;
+            top: 0px;
+        }
+
+        a {
+            color: black;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 30px;
+            margin: 30px;
+        }
+
+        a:hover {
+            color: rgb(184, 180, 180);
+            text-decoration: underline;
+        }
+
+        .logo img {
+            /* padding: 20px;
+            margin: 20px; */
+            width: 100px;
+            height: 100px;
+        }
+
+        .logo img:hover {
+            filter: invert(0.2);
+        }
+
+        .logo {
+            /* border: 2px solid red; */
+            position: absolute;
+            top: 8px;
+            left: 15px;
+
+        }
+
+        .lol input {
+            height: 25px;
+            border-radius: 50px;
+        }
+
+        .lol {
+            position: absolute;
+            right: 80px;
+            top: 40px;
+        }
+
+        .hom {
+            /* border: 2px solid black; */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* color: white; */
+            /* position: absolute;
+            top: 200px;
+            left: 400px; */
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            background: url('../chef.jpg') no-repeat center center/cover;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            opacity: 0.6;
+        }
+
+        #home h1 {
+            font-size: 4.5rem;
+        }
+
+        #home h1:hover {
+            text-shadow: 3px 3px 3px brown;
+        }
+
+        #home p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #home p:hover {
+            text-shadow: 1px 1px 1px white;
+        }
+
+        .ntn {
+            width: 134px;
+            height: 40px;
+            font-weight: bold;
+            font-size: 15px;
+            border-radius: 50px;
+            padding: 8px;
+            margin: 8px;
+            /* opacity: 0.9; */
+        }
+
+        .ntn:hover {
+            background-color: darkgrey;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        /* Menu Area */
+        .box {
+            border: 2px solid black;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1000px;
+            left: 50px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box1 {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1000px;
+            left: 525px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box2 {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1000px;
+            left: 1000px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box0x {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1400px;
+            left: 525px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box1x {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1400px;
+            left: 50px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box2x {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1400px;
+            left: 1000px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box4 {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1800px;
+            left: 50px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box5 {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1800px;
+            left: 525px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box6 {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 1800px;
+            left: 1000px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box7 {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 2200px;
+            left: 50px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box8 {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 2200px;
+            left: 525px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .box9 {
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 400px;
+            height: 320px;
+            text-align: center;
+            position: absolute;
+            top: 2200px;
+            left: 1000px;
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(223, 219, 219);
+        }
+
+        .firsth {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .firsth:hover {
+            text-shadow: 0.8px 0.8px brown;
+        }
+
+        .box img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box1 img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box2 img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box0x img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box1x img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box2x img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box4 img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box5 img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box6 img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box7 img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box8 img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box9 img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .box:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box1:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box2:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box0x:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box1x:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box2x:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box4:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box5:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box6:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box7:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box8:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .box9:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        /* Sitting Area */
+        .zeroh {
+            /* /* background-color: darkgray; */
+            border: 2px solid black;
+            border-radius: 50px;
+            width: 700px;
+            height: 63px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            position: absolute;
+            top: 800px;
+            left: 430px;
+            /* font-size: 3rem; */
+            font-size: 3.8rem;
+            background-color: black;
+            color: white;
+        }
+
+        .zeroh:hover {
+            text-shadow: 2px 2px 2px brown;
+            background-color: rgb(160, 155, 155);
+        }
+
+        .services {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*  Cook / Chef Area */
+        #cooks {
+            /* border: 2px solid black; */
+            width: 1540px;
+            height: 1000px;
+            position: absolute;
+            left: 0px;
+            right: 0 px;
+            top: 2680px;
+        }
+
+        .cookh1 {
+            font-size: 4.2rem;
+            border: 2px solid black;
+            width: 750px;
+            height: 80px;
+            border-radius: 50px;
+            text-align: center;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            /* justify-items: center; */
+            position: absolute;
+            left: 380px;
+            background-color: black;
+            color: white;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .cookh1:hover {
+            text-shadow: 3px 3px 3px brown;
+            background-color: rgb(160, 155, 155);
+        }
+
+        /* #home h1 {
+            font-size: 4.5rem;
+        }
+
+        #home h1:hover {
+            text-shadow: 3px 3px 3px brown;
+        }
+
+        #home p {
+            font-weight: bold;
+            font-size: 18px;
+        } */
+        .cok1 {
+            background-color: rgb(207, 204, 204);
+            border: 2px solid black;
+            width: 600px;
+            height: 420px;
+            text-align: center;
+            padding: 30px;
+            border-radius: 50px;
+            position: absolute;
+            top: 320px;
+            left: 70px;
+        }
+
+        .cok1:hover {
+            box-shadow: 2px 2px 3px black;
+        }
+
+        .cok1 img {
+            width: 400px;
+            height: 300px;
+            border-radius: 20px;
+        }
+
+        .cok2 {
+            background-color: rgb(207, 204, 204);
+            border: 2px solid black;
+            width: 600px;
+            height: 430px;
+            text-align: center;
+            padding: 30px;
+            border-radius: 50px;
+            position: absolute;
+            top: 320px;
+            left: 800px;
+        }
+
+        .cok2:hover {
+            box-shadow: 2px 2px 3px black;
+        }
+
+        .cok2 img {
+            width: 400px;
+            height: 300px;
+            border-radius: 20px;
+        }
+
+        /*    Sitting Area */
+        #sitting {
+            /* border: 2px solid black; */
+            height: 810px;
+            width: 1542px;
+            position: absolute;
+            top: 3600px;
+            left: 0px;
+            right: 0px;
+        }
+
+        .sitt {
+            font-size: 4.2rem;
+            border: 2px solid black;
+            width: 550px;
+            height: 80px;
+            border-radius: 50px;
+            text-align: center;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            /* justify-items: center; */
+            position: absolute;
+            left: 460px;
+            background-color: black;
+            color: white;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .sitt:hover {
+            text-shadow: 2px 2px 2px brown;
+            background-color: rgb(160, 155, 155);
+        }
+
+        .st {
+            text-align: center;
+            border: 3px solid black;
+            border-radius: 50px;
+            width: 1220px;
+            height: 390px;
+            position: absolute;
+            top: 250px;
+            left: 170px;
+            /* background-color: rgb(207, 204, 204); */
+
+        }
+
+        .st::before {
+            border-radius: 50px;
+            background: url('IMG/sittingpoint.png');
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .st:hover {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .sitt1 {
+            border: 3px solid black;
+            background-color: rgb(228, 228, 202);
+            border-radius: 50px;
+            width: 450px;
+            height: 230px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            padding: 30px;
+        }
+
+        .sitt1:hover {
+            box-shadow: 3px 3px 3px black;
+        }
+
+        .sitt2 {
+            position: absolute;
+            left: 700px;
+            top: 50px;
+        }
+
+        .sitt2 img:hover {
+            box-shadow: 3px 3px 3px black;
+        }
+
+        .sitt2 img {
+            width: 460px;
+            height: 280px;
+            border: 3px solid black;
+            border-radius: 50px;
+        }
+
+        /*  Contact Area */
+        .last h1 {
+            font-size: 4.2rem;
+            border: 2px solid black;
+            width: 950px;
+            height: 80px;
+            border-radius: 50px;
+            text-align: center;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            /* justify-items: center; */
+            position: absolute;
+            top: 4400px;
+            left: 270px;
+            background-color: black;
+            color: white;
+            margin: 20px;
+            padding: 20px;
+        }
+        .last h1:hover{
+            text-shadow: 2px 2px 2px brown;
+            background-color: rgb(160, 155, 155);
+        }
+        #contact {
+            /* border: 2px solid black; */
+            width: 1545px;
+            height: 500px;
+            position: absolute;
+            left: 0px;
+            top: 4700px;
+        }
+
+        .lasthy {
+            text-align: center;
+            font-size: 5.5rem;
+            font-weight: bold;
+            color: black;
+        }
+        .lasthy:hover{
+            text-shadow: 3px 3px 3px brown;
+        }
+        #contact::before{
+            background: url('IMG/contacttime.png') no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        .a1a img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            position: absolute;
+            top: 290px;
+            left: 500px;
+            /* border: 4px solid black;
+            border-color: brown; */
+        }
+        .a1a img:hover{
+            box-shadow: 6px 6px 6px black;
+            /* box-shadow: -6px -6px 6px black; */
+            filter: invert(0.1);
+        }
+        .a2a img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            position: absolute;
+            top: 290px;
+            left: 730px;
+        }
+        .a2a img:hover{
+            box-shadow: 6px 6px 6px black;
+            filter: invert(0.1);
+        }
+        .a3a img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            position: absolute;
+            top: 290px;
+            left: 940px;
+        }
+        .a3a img:hover{
+            box-shadow: 6px 6px 6px black;
+            filter: invert(0.1);
+        }
+        #timee{
+            border: 2px solid black;
+            background-color: black;
+            color:white;
+            border-radius: 50px;
+            width: 480px;
+            height: 17px;
+            text-align: center;
+            margin: 30px;
+            padding: 10px;
+            font-weight: bold;
+            position:absolute;
+            left: 1005px;
+            top: 420px;
+            animation: infinite;
+            animation-name: Rehmat;
+            animation-duration: 10s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes Rehmat {
+            20%{
+                /* background-color: aquamarine; */
+                background-color: black;
+                color:crimson;
+            }
+            40%{
+                /* background-color: rgb(223, 41, 78); */
+                background-color: black;
+                color: white;
+            }
+            60%{
+                /* background-color: darkkhaki; */
+                background-color: black;
+                color:chartreuse;
+            }
+            80%{
+                /* background-color:rgb(153, 96, 26); */
+                background-color: black;
+                color:white;
+            }
+            100%{
+                /* background-color: rgb(50, 158, 50); */
+                background-color: black;
+                color:darkgoldenrod;
+            }
+        }
+        #timee:hover{
+            box-shadow: 3px 3px 3px black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Picture Is Not Threre...">
+        </div>
+        <ul>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">About</a></li>
+            <li class="item"><a href="#">Services</a></li>
+            <li class="item"><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="lol">
+            <label for="MySearch"></label>
+            <input type="text" name="Search" id="MySearch" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Search Here ....">
+        </div>
+    </nav><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- Welcome Page -->
+    <section id="home" class="hom">
+        <h1>Welcome To My Resturant....</h1>
+        <p>Lorem ipsum dolor sit consectetur adipisicing elit. Facilis excepturi illum sapiente sunt quae
+            culpa.</p>
+        <p>Lorem ipsum consectetur adipisicing. Facilis excepturi sapiente sunt quae
+            culpa.</p><br><br>
+        <button class="ntn">Order Kro Abhi</button>
+    </section>
+    <!-- Menu Card -->
+    <h1 class="zeroh">Our Delicious Menu Card</h1>
+    <section class="sevices">
+        <div class="servarea">
+            <div class="box">
+                <img src="IMG/pizza.png" alt="Picture Not Here">
+                <h1 class="firsth">Pizza</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box1">
+                <img src="IMG/burger.png" alt="Picture Not Here">
+                <h1 class="firsth">Burgers</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box2">
+                <img src="IMG/broast.png" alt="Picture Not Here">
+                <h1 class="firsth">Chicken Broast</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box0x">
+                <img src="IMG/steaks.png" alt="Picture Not Here">
+                <h1 class="firsth">Steaks</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box1x">
+                <img src="IMG/barbq.png" alt="Picture Not Here">
+                <h1 class="firsth">Bar B Q</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box2x">
+                <img src="IMG/rice.png" alt="Picture Not Here">
+                <h1 class="firsth">Rice</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box4">
+                <img src="IMG/karahi.png" alt="Picture Not Here">
+                <h1 class="firsth">Karahi / Handi</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box5">
+                <img src="IMG/fries.png" alt="Picture Not Here">
+                <h1 class="firsth">Potaoto Fries</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box6">
+                <img src="IMG/naan.png" alt="Picture Not Here">
+                <h1 class="firsth">Roti / Naan</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box7">
+                <img src="IMG/icecream.png" alt="Picture Not Here">
+                <h1 class="firsth">Ice - Cream</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box8">
+                <img src="IMG/sweets.png" alt="Picture Not Here">
+                <h1 class="firsth">Sweets</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+            <div class="box9">
+                <img src="IMG/drinks.png" alt="Picture Not Here">
+                <h1 class="firsth">Beverages</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem autem iste vitae tempora quo!
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Chef / Cooks -->
+    <section id="cooks">
+        <div>
+            <h1 class="cookh1">Our Honourable Cooks</h1>
+            <div class="cook">
+                <div class="cok1">
+                    <img src="IMG/cook1.png" alt="Picture Is Not Here">
+                    <h1 class="firsth">Mr. Left&nbsp; & &nbsp;Mr. Right</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt molestias assumenda quas enim cum
+                        dolor.</p>
+                </div>
+                <div class="cok2">
+                    <img src="IMG/cook2.png" alt="Picture Is Not Here">
+                    <h1 class="firsth">Mrs. Diana</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt molestias assumenda quas enim cum
+                        dolor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Dinning Place -->
+    <section id="sitting">
+        <div>
+            <h1 class="sitt">Our Dinning Point</h1>
+            <div class="st">
+                <div class="sitt1">
+                    <h1 class="firsth">Our Sitting Club</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis cumque dolorum, molestiae odio
+                        deleniti nulla voluptatem laudantium, quod numquam harum, quibusdam quae ab commodi provident ea
+                        cum enim ullam. A!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adi</p>
+                </div>
+                <div class="sitt2">
+                    <img src="sit.jpg" alt="Not Here & There">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="last">
+        <h1>So, What Are You Waiting For...</h1>
+    </div>
+    <div class="phone">
+        <section id="contact">
+            <h1 class="lasthy">Contact Us</h1>
+            <div class="zzz">
+                <div class="a1a">
+                    <img src="IMG/whatsapp.png" alt="Not There">
+                </div>
+                <div class="a2a">
+                    <img src="IMG/youtube.png" alt="Not There">
+                </div>
+                <div class="a3a">
+                    <img src="IMG/twitter.png" alt="">
+                </div>
+                <!-- <div class="a4a"></div>
+            </div> -->
+            <div id="timee"></div>
+        </section> -->
+    </div>
+    <script>
+        function waqt(){
+            document.getElementById("timee").innerHTML = new Date()
+        }
+        setInterval(waqt,1000)
+    </script>
+</body>
+
+</html>
